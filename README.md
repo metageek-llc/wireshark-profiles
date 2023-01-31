@@ -1,4 +1,3 @@
-# wireshark-profiles
 # Wireshark Profiles
 
 Use this drop-in profile to instantly configure Wireshark for 802.11 packet analysis, or use it as a starting point for your own custom configuration!
@@ -36,11 +35,9 @@ Replace cc:cc:cc:cc:cc:cc with client MAC address
 
 
 ## Installation Instructions
-1. Download the file
+1. Download the MG_Wi-Fi folder
 
-2. Unzip the contents, which will be a folder called "MetaGeek Profile"
-
-3. Add the unzipped folder to the "profiles" folder.
+2. Add the folder to the "profiles" folder.
 
 *Note: On macOS, you can do this by opening Wireshark, enter CMD+Shift+A, then click directory path on bottom right of dialog box. Copy unzipped folder into profiles folder in that directory*
 
