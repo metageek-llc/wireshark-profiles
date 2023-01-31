@@ -3,7 +3,7 @@
 
 Use this drop-in profile to instantly configure Wireshark for 802.11 packet analysis, or use it as a starting point for your own custom configuration!
 
-MetaGeek_Configuration_Profile.png
+![MetaGeek Configuration](ReadmeImages/MetaGeek Configuration Profile.png)
 
 ## Features
 MetaGeek Frame Coloring
@@ -18,12 +18,12 @@ See 4-way handshakes and RADIUS exchanges! Cool!
 ### Frame Sub-Type Column
 See frame sub-types in a column!
 
-Frame_Types.png
+![Frame Types](ReadmeImages/Frame Types.png)
 
 ### Marked Retries
 The frame type column marks retries without changing the color. Nice! 
 
-Retries.png
+![Retries](ReadmeImages/Retries.png)
 
 ### Hide Frame Types
 "Hide Bad", "Hide Data", "Hide Management", and "Hide Control" shortcut buttons mean that there are 4 less regular expressions for you to remember and type. You're welcome!
@@ -46,4 +46,4 @@ Replace cc:cc:cc:cc:cc:cc with client MAC address
 
 4. Activate the profile in the lower right corner of Wireshark.
 
-select_profile.png
+![Select Profile](ReadmeImages/select_profile.png)
