@@ -3,7 +3,7 @@
 
 Use this drop-in profile to instantly configure Wireshark for 802.11 packet analysis, or use it as a starting point for your own custom configuration!
 
-![MetaGeek Configuration](ReadmeImages/MetaGeek Configuration Profile.png)
+![MetaGeekConfiguration](ReadmeImages/MetaGeek_Configuration_Profile.png)
 
 ## Features
 MetaGeek Frame Coloring
@@ -18,7 +18,7 @@ See 4-way handshakes and RADIUS exchanges! Cool!
 ### Frame Sub-Type Column
 See frame sub-types in a column!
 
-![Frame Types](ReadmeImages/Frame Types.png)
+![FrameTypes](ReadmeImages/Frame_Types.png)
 
 ### Marked Retries
 The frame type column marks retries without changing the color. Nice! 
