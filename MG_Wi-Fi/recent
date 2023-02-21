@@ -1,4 +1,4 @@
-# Recent settings file for Wireshark 4.0.2.
+# Recent settings file for Wireshark 4.0.3.
 #
 # This file is regenerated each time Wireshark is quit
 # and when changing configuration profile.
@@ -75,11 +75,11 @@ gui.allow_hover_selection: TRUE
 
 # Main window upper (or leftmost) pane size.
 # Decimal number.
-gui.geometry_main_upper_pane: 774
+gui.geometry_main_upper_pane: 618
 
 # Main window middle pane size.
 # Decimal number.
-gui.geometry_main_lower_pane: 1201
+gui.geometry_main_lower_pane: 1039
 
 # Packet list column pixel widths.
 # Each pair of strings consists of a column format and its pixel width.
@@ -87,10 +87,12 @@ column.width:
         "%Cus:frame.comment", -1,
         %m, -1,
         %Tt, 96,
-        %Aut, 151,
+        %At, -1,
         "%Cus:wlan_radio.channel", 40:L,
         %s, -1,
         %d, -1,
+        "%Cus:wlan_radio.11ac.bandwidth", 75,
+        "%Cus:wlan_radio.11ac.mcs", 75,
         "%Cus:wlan.ta_resolved", 207,
         "%Cus:wlan.ra_resolved", 173,
         "%Cus:frame.coloring_rule.name", 126,
@@ -98,17 +100,16 @@ column.width:
         "%Cus:wlan.ssid", 138:L,
         %L, -1,
         "%Cus:wlan.duration", -1,
-        %e, -1,
+        %e, 117,
         %x, -1,
-        "%Cus:wlan_radio.11ac.mcs", -1,
-        "%Cus:wlan_radio.phy", 131,
+        "%Cus:wlan_radio.11ac.mcs", 75,
+        "%Cus:wlan_radio.phy", 182,
         "%Cus:eap.code", 91,
         "%Cus:wlan.qbss.scount", -1,
         "%Cus:eap.identity", 111,
         "%Cus:wlan.fixed.reason_code", 116,
         "%Cus:wlan.vht.compressed_beamforming_report.snr", 805,
-        %i, 492,
-        "%Cus:wlan_radio.11ac.bandwidth", 7826
+        %i, 10305
 
 # Open conversation dialog tabs.
 # List of conversation names, e.g. "TCP", "IPv6".
@@ -131,7 +132,7 @@ gui.endpoint_tabs_columns:
 gui.rlc_pdus_from_mac_frames: FALSE
 
 # Last directory navigated to in File Open dialog.
-gui.fileopen_remembered_dir: /Users/trentcutler/Downloads/test captures/
+gui.fileopen_remembered_dir: /Users/trentcutler/Downloads/
 
 # Additional Toolbars shown
 # List of additional toolbars to show.

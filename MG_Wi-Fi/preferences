@@ -1,4 +1,4 @@
-# Configuration file for Wireshark 4.0.2.
+# Configuration file for Wireshark 4.0.3.
 #
 # This file is regenerated each time preferences are saved within
 # Wireshark. Making manual changes should be safe, however.
@@ -252,7 +252,7 @@
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:frame.comment:0:R,%s,%d,%L,%Cus:wlan.duration:0:R,%Cus:wlan_radio.11ac.mcs:0:R,%Cus:wlan.qbss.scount:0:R,%Cus:wlan.vht.compressed_beamforming_report.snr:0:R
+gui.column.hidden: %Cus:frame.comment:0:R,%s,%d,%Cus:wlan_radio.11ac.mcs:0:R,%L,%Cus:wlan.duration:0:R,%Cus:wlan_radio.11ac.mcs:0:R,%Cus:wlan.qbss.scount:0:R,%Cus:wlan.vht.compressed_beamforming_report.snr:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -260,10 +260,12 @@ gui.column.format:
 	"Comment", "%Cus:frame.comment:0:R",
 	"No.", "%m",
 	"Delta", "%Tt",
-	"Time", "%Aut",
+	"Time", "%At",
 	"Channel", "%Cus:wlan_radio.channel:0:R",
 	"Source", "%s",
 	"Destination", "%d",
+	"Width", "%Cus:wlan_radio.11ac.bandwidth:0:R",
+	"MCS", "%Cus:wlan_radio.11ac.mcs:0:R",
 	"Transmitter", "%Cus:wlan.ta_resolved:0:R",
 	"Receiver", "%Cus:wlan.ra_resolved:0:R",
 	"Frame Type", "%Cus:frame.coloring_rule.name:1:R",
@@ -280,8 +282,7 @@ gui.column.format:
 	"Identity", "%Cus:eap.identity:0:R",
 	"Reason code", "%Cus:wlan.fixed.reason_code:0:R",
 	"Client SNR", "%Cus:wlan.vht.compressed_beamforming_report.snr:0:R",
-	"Info", "%i",
-	"Width", "%Cus:wlan_radio.11ac.bandwidth:0:R"
+	"Info", "%i"
 
 ####### User Interface: Font ########
 
@@ -346,7 +347,7 @@ gui.layout_content_3: PDIAGRAM
 
 # Interface link-layer header types (Ex: en0(1),en1(143),...)
 # A string
-#capture.devices_linktypes: 
+capture.devices_linktypes: en0(1),awdl0(1),llw0(1),utun0(0),ap1(1),utun1(0),utun2(0),lo0(0),anpi0(1),bridge0(1),anpi1(1),en1(1),anpi2(1),en2(1),en3(1),en4(1),en5(1),en6(1),gif0(0),stf0(0),ciscodump(147),randpkt(147),sshdump(147),udpdump(252),wifidump(147)
 
 # Interface descriptions (Ex: eth0(eth0 descr),eth1(eth1 descr),...)
 # A string
@@ -362,15 +363,15 @@ gui.layout_content_3: PDIAGRAM
 
 # Interface buffer size (Ex: en0(1),en1(143),...)
 # A string
-#capture.devices_buffersize: 
+capture.devices_buffersize: en0(2),awdl0(2),llw0(2),utun0(2),ap1(2),utun1(2),utun2(2),lo0(2),anpi0(2),bridge0(2),anpi1(2),en1(2),anpi2(2),en2(2),en3(2),en4(2),en5(2),en6(2),gif0(2),stf0(2),ciscodump(2),randpkt(2),sshdump(2),udpdump(2),wifidump(2)
 
 # Interface snap length (Ex: en0(65535),en1(1430),...)
 # A string
-#capture.devices_snaplen: 
+capture.devices_snaplen: en0:0(262144),awdl0:0(262144),llw0:0(262144),utun0:0(262144),ap1:0(262144),utun1:0(262144),utun2:0(262144),lo0:0(262144),anpi0:0(262144),bridge0:0(262144),anpi1:0(262144),en1:0(262144),anpi2:0(262144),en2:0(262144),en3:0(262144),en4:0(262144),en5:0(262144),en6:0(262144),gif0:0(262144),stf0:0(262144),ciscodump:0(262144),randpkt:0(262144),sshdump:0(262144),udpdump:0(262144),wifidump:0(262144)
 
 # Interface promiscuous mode (Ex: en0(0),en1(1),...)
 # A string
-#capture.devices_pmode: 
+capture.devices_pmode: en0(1),awdl0(1),llw0(1),utun0(1),ap1(1),utun1(1),utun2(1),lo0(1),anpi0(1),bridge0(1),anpi1(1),en1(1),anpi2(1),en2(1),en3(1),en4(1),en5(1),en6(1),gif0(1),stf0(1),ciscodump(1),randpkt(1),sshdump(1),udpdump(1),wifidump(1)
 
 # Capture in promiscuous mode?
 # TRUE or FALSE (case-insensitive)
@@ -460,19 +461,19 @@ gui.layout_content_3: PDIAGRAM
 
 # Remote SSH server address
 # A string
-#extcap.wifidump.remotehost: 
+extcap.wifidump.remotehost: 192.168.130.165
 
 # Remote SSH server port
 # A string
-#extcap.wifidump.remoteport: 
+extcap.wifidump.remoteport: 22
 
 # Remote SSH server username
 # A string
-#extcap.wifidump.remoteusername: 
+extcap.wifidump.remoteusername: wlanpi
 
 # Remote SSH server password
 # Password (never stored on disk)
-#extcap.wifidump.remotepassword: 
+extcap.wifidump.remotepassword: 
 
 # Path to SSH private key
 # A string
@@ -488,11 +489,11 @@ gui.layout_content_3: PDIAGRAM
 
 # Remote channel
 # A string
-#extcap.wifidump.remotechannelfrequency: 
+extcap.wifidump.remotechannelfrequency: 5180
 
 # Remote channel width
 # A string
-#extcap.wifidump.remotechannelwidth: 
+extcap.wifidump.remotechannelwidth: 20
 
 # Remote capture filter
 # A string
@@ -500,11 +501,11 @@ gui.layout_content_3: PDIAGRAM
 
 # Frames to capture
 # A string
-#extcap.wifidump.remotecount: 
+extcap.wifidump.remotecount: 0
 
 # Set the log level
 # A string
-#extcap.wifidump.loglevel: 
+extcap.wifidump.loglevel: message
 
 # Use a file for logging
 # A string
@@ -540,7 +541,7 @@ gui.layout_content_3: PDIAGRAM
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host fe80::ce81:b1c:bd2c:69e any eq 22, deny tcp any eq 22 host fe80::ce81:b1c:bd2c:69e, deny tcp host fe80::4731:2c7e:8210:dcc8 any eq 22, deny tcp any eq 22 host fe80::4731:2c7e:8210:dcc8, deny tcp host fe80::dfdd:6ad9:9d38:c9a0 any eq 22, deny tcp any eq 22 host fe80::dfdd:6ad9:9d38:c9a0, deny tcp host fe80::e08a:85ff:fee2:32fd any eq 22, deny tcp any eq 22 host fe80::e08a:85ff:fee2:32fd, deny tcp host fe80::e08a:85ff:fee2:32fd any eq 22, deny tcp any eq 22 host fe80::e08a:85ff:fee2:32fd, deny tcp host fdee:5a01:e861:404e:10a6:9ebe:d453:c582 any eq 22, deny tcp any eq 22 host fdee:5a01:e861:404e:10a6:9ebe:d453:c582, deny tcp host 192.168.234.217 any eq 22, deny tcp any eq 22 host 192.168.234.217, deny tcp host fe80::1c51:887d:f38:add any eq 22, deny tcp any eq 22 host fe80::1c51:887d:f38:add, deny tcp host fe80::a430:e1ff:fe08:1577 any eq 22, deny tcp any eq 22 host fe80::a430:e1ff:fe08:1577, deny tcp host fe80::a430:e1ff:fe08:1578 any eq 22, deny tcp any eq 22 host fe80::a430:e1ff:fe08:1578, deny tcp host fe80::a430:e1ff:fe08:1576 any eq 22, deny tcp any eq 22 host fe80::a430:e1ff:fe08:1576, deny tcp host fe80::1 any eq 22, deny tcp any eq 22 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host fe80::ce81:b1c:bd2c:69e any eq 22, deny tcp any eq 22 host fe80::ce81:b1c:bd2c:69e, deny tcp host fe80::785a:2b19:21ce:8efd any eq 22, deny tcp any eq 22 host fe80::785a:2b19:21ce:8efd, deny tcp host fe80::a8d3:344b:3f16:13cf any eq 22, deny tcp any eq 22 host fe80::a8d3:344b:3f16:13cf, deny tcp host fe80::185b:58ff:fe1c:93e any eq 22, deny tcp any eq 22 host fe80::185b:58ff:fe1c:93e, deny tcp host fe80::185b:58ff:fe1c:93e any eq 22, deny tcp any eq 22 host fe80::185b:58ff:fe1c:93e, deny tcp host 192.168.130.34 any eq 22, deny tcp any eq 22 host 192.168.130.34, deny tcp host fe80::c26:651e:b467:2c3a any eq 22, deny tcp any eq 22 host fe80::c26:651e:b467:2c3a, deny tcp host fe80::a430:e1ff:fe08:1578 any eq 22, deny tcp any eq 22 host fe80::a430:e1ff:fe08:1578, deny tcp host fe80::a430:e1ff:fe08:1577 any eq 22, deny tcp any eq 22 host fe80::a430:e1ff:fe08:1577, deny tcp host fe80::a430:e1ff:fe08:1576 any eq 22, deny tcp any eq 22 host fe80::a430:e1ff:fe08:1576, deny tcp host fe80::1 any eq 22, deny tcp any eq 22 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -620,7 +621,7 @@ gui.layout_content_3: PDIAGRAM
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host fe80::ce81:b1c:bd2c:69e or host fe80::4731:2c7e:8210:dcc8 or host fe80::dfdd:6ad9:9d38:c9a0 or host fe80::e08a:85ff:fee2:32fd or host fe80::e08a:85ff:fee2:32fd or host fdee:5a01:e861:404e:10a6:9ebe:d453:c582 or host 192.168.234.217 or host fe80::1c51:887d:f38:add or host fe80::a430:e1ff:fe08:1577 or host fe80::a430:e1ff:fe08:1578 or host fe80::a430:e1ff:fe08:1576 or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host fe80::ce81:b1c:bd2c:69e or host fe80::785a:2b19:21ce:8efd or host fe80::a8d3:344b:3f16:13cf or host fe80::185b:58ff:fe1c:93e or host fe80::185b:58ff:fe1c:93e or host 192.168.130.34 or host fe80::c26:651e:b467:2c3a or host fe80::a430:e1ff:fe08:1578 or host fe80::a430:e1ff:fe08:1577 or host fe80::a430:e1ff:fe08:1576 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
@@ -1908,6 +1909,10 @@ gui.layout_content_3: PDIAGRAM
 # Whether the DSI dissector should reassemble messages spanning multiple TCP segments. To use this option, you must also enable "Allow subdissectors to reassemble TCP streams" in the TCP protocol settings.
 # TRUE or FALSE (case-insensitive)
 #dsi.desegment: TRUE
+
+# Semicolon-separated list of private RSA keys used for DTLS decryption. Used by versions of Wireshark prior to 1.6
+# A string
+#dtls.keys_list: 
 
 # redirect dtls debug to file name; leave empty to disable debug, use "-" to redirect output to stderr
 # 
@@ -4234,6 +4239,10 @@ gui.layout_content_3: PDIAGRAM
 # TRUE or FALSE (case-insensitive)
 #protobuf.display_json_mapping: FALSE
 
+# Display timestamp in UTC format
+# TRUE or FALSE (case-insensitive)
+#protobuf.use_utc: FALSE
+
 # Try to dissect all undefined length-delimited fields as string.
 # TRUE or FALSE (case-insensitive)
 #protobuf.try_dissect_as_string: FALSE
@@ -5328,6 +5337,10 @@ gui.layout_content_3: PDIAGRAM
 # Whether the TIPC-over-TCP dissector should reassemble messages spanning multiple TCP segments. To use this option, you must also enable "Allow subdissectors to reassemble TCP streams" in the TCP protocol settings.
 # TRUE or FALSE (case-insensitive)
 #tipc.desegment: TRUE
+
+# Semicolon-separated list of private RSA keys used for TLS decryption. Used by versions of Wireshark prior to 1.6
+# A string
+#tls.keys_list: 
 
 # Redirect TLS debug to the file specified. Leave empty to disable debugging or use "-" to redirect output to stderr.
 # A path to a file
