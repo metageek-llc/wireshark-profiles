@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> Archived November 16, 2026. Contact [Oscium Support](https://support.oscium.com) for details.
+
 # Wireshark Profiles
 
 Use this drop-in profile to instantly configure Wireshark for 802.11 packet analysis, or use it as a starting point for your own custom configuration!
